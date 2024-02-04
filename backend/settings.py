@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'users.apps.UsersConfig',
     'api.apps.ApiConfig',
+    'catalog.apps.CatalogConfig',
 ]
 
 MIDDLEWARE = [
@@ -111,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'Moscow'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
