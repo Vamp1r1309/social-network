@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for item in posts %}
+        <div class="container">
+            <div class="content">
+                <div class="content-top">
+                    <div class="top__image">
+                        <img src="{{item.image.url}}" alt="{{ item.name }}" class="top__image-img">
+                    </div>
+                </div>
+                <div class="content__body">
+                    <div class="body__title">
+                        <h5>{{ item.name }}</h5>
+                    </div>
+                    <div class="body__content">
+                        <p>{{ item.description|truncatewords_html:20}}</p>
+                    </div>
+                </div>
+                <div class="content__footer">
+                    <div class="footer-price">
+                        <p>{{ item.price }}</p>
+                    </div>
+                    <div class="footer-button">
+                        <button type="submit">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

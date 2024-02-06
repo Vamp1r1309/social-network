@@ -19,7 +19,7 @@ class CatalogModel(models.Model):
                                   blank=True, 
                                   related_name='tags')
     image = models.ImageField('Фотография', 
-                              upload_to='static/media/', 
+                              upload_to='img/', 
                               blank=True, 
                               null=True)
     is_published = models.BooleanField('Публикация',

@@ -1,15 +1,20 @@
 from django.shortcuts import render
-from django.views.generic import ListView
-from users.models import Users
+from django.views.generic import ListView, FormView
 
+from users.forms import AddRegisterUserForm
+from users.models import Users
+from catalog.models import CatalogModel, TagPost
 
 class CatalogView(ListView):
-    ...
+    model = CatalogModel
+    template_name = 'catalog/index.html'
+    context_object_name = 'posts'
 
 
-class UserAuth(ListView):
+class UserAuth(FormView):
     """Класс для регистрации
     и авторизации пользователя"""
     model = Users
     template_name = 'users/users.html'
-    context_object_name = 'posts'
+    form_class = AddRegisterUserForm
+    context_object_name = 'form'
