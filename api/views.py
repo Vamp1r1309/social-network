@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, FormView
 
 from users.forms import AddRegisterUserForm
-from users.models import Users
+from users.models import User
 from catalog.models import CatalogModel, TagPost
 
 class CatalogView(ListView):
@@ -14,7 +14,7 @@ class CatalogView(ListView):
 class UserAuth(FormView):
     """Класс для регистрации
     и авторизации пользователя"""
-    model = Users
+    model = User
     template_name = 'users/users.html'
     form_class = AddRegisterUserForm
     context_object_name = 'form'
